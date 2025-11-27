@@ -1,247 +1,407 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'essence - Perfumes de Luxo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Estudos - Simulados e Banco de Questões</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="top-bar">
-        <div class="container">
-            <span class="brand">L'essence</span>
-            <nav class="navigation">
-                <a href="#colecao">Coleção</a>
-                <a href="#historia">Nossa história</a>
-                <a href="#experimente">Experimente</a>
-            </nav>
-            <a class="cta-secondary" href="#experimente">Clube Exclusivo</a>
+  <header class="app-header">
+    <div class="brand-area">
+      <span class="brand-mark">Portal Acadêmico</span>
+      <span class="brand-sub">Listas, provas e simulados com correção automática</span>
+    </div>
+    <div class="header-actions">
+      <button class="ghost-btn" aria-label="Notificações">🔔</button>
+      <button class="ghost-btn" aria-label="Perfil">👤</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <p class="sidebar-title">Navegação</p>
+        <nav class="sidebar-menu">
+          <a class="sidebar-link active" href="#login">Login inicial</a>
+          <a class="sidebar-link" href="#banco">Banco de questões</a>
+          <a class="sidebar-link" href="#simulado">Criar simulado</a>
+          <a class="sidebar-link" href="#relatorios">Acompanhamento</a>
+        </nav>
+      </div>
+      <div class="sidebar-section">
+        <div class="switch-row">
+          <div>
+            <p class="switch-label">Ver site como aluno</p>
+            <small>Alterna para a visão que os estudantes enxergam.</small>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="student-view-toggle" aria-label="Ativar visão de aluno">
+            <span class="slider"></span>
+          </label>
         </div>
-    </header>
+      </div>
+      <div class="sidebar-section highlight">
+        <p class="sidebar-title">Proteção ativa</p>
+        <p class="autosave-status" id="autosave-status">Salvamento automático ligado</p>
+        <small>Os dados do formulário de questões são gravados a cada 10 segundos para evitar perdas em desligamentos inesperados.</small>
+      </div>
+    </aside>
 
-    <main>
-        <section class="hero" id="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <p class="hero-tag">Edição limitada 2024</p>
-                    <h1>Perfumes super cheirosos.</h1>
-                    <p class="hero-subtext">
-                        Cada fragrância L'essence é criada em Grasse, na França, com essências raras e um toque autoral.
-                        Descubra aromas feitos para marcar seus melhores momentos.
-                    </p>
-                    <div class="hero-actions">
-                        <a class="cta-primary" href="#colecao">Comprar agora</a>
-                        <a class="cta-link" href="#historia">Conheça o processo</a>
-                    </div>
-                    <div class="stats">
-                        <div>
-                            <span class="stat-number">+25k</span>
-                            <span class="stat-label">Clientes apaixonados</span>
-                        </div>
-                        <div>
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Avaliação de satisfação</span>
-                        </div>
-                        <div>
-                            <span class="stat-number">72h</span>
-                            <span class="stat-label">Entrega express para capitais</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-card">
-                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=700&q=80" alt="Frasco de perfume elegante" />
-                        <div class="hero-card-content">
-                            <h3>Lumière d'Or</h3>
-                            <p>
-                                Bergamota italiana, jasmim egípcio e âmbar cremoso se unem para um acorde luminoso e sofisticado.
-                            </p>
-                            <span class="price">R$ 589</span>
-                        </div>
-                    </div>
-                    <div class="hero-card secondary">
-                        <img src="https://images.unsplash.com/photo-1535639818669-c0e4340fd6d1?auto=format&fit=crop&w=700&q=80" alt="Detalhe de frasco de perfume" />
-                        <div class="hero-card-content">
-                            <h3>Noir Velours</h3>
-                            <p>
-                                Pimenta rosa, rosa turca e patchouli profundo em um perfume sedutor para noites memoráveis.
-                            </p>
-                            <span class="price">R$ 629</span>
-                        </div>
-                    </div>
-                </div>
+    <section class="content">
+      <div class="grid two-cols" id="login">
+        <div class="card login-card">
+          <div>
+            <p class="eyebrow">Acesso seguro</p>
+            <h1>Faça login para criar ou resolver simulados</h1>
+            <p class="muted">Use sua conta de professor ou aluno. Você pode alternar a visão no menu lateral para validar a experiência do estudante.</p>
+          </div>
+          <form class="form-grid">
+            <label>
+              <span>Usuário</span>
+              <input type="text" placeholder="seu_login" required>
+            </label>
+            <label>
+              <span>Senha</span>
+              <input type="password" placeholder="••••••" required>
+            </label>
+            <div class="login-actions">
+              <button type="submit" class="primary-btn">Entrar</button>
+              <button type="button" class="secondary-btn">Criar conta</button>
+              <button type="button" class="link-btn">Recuperar senha</button>
             </div>
-        </section>
-
-        <section class="benefits" id="colecao">
-            <div class="container">
-                <h2>Por que escolher um perfume L'essence?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <span class="benefit-icon">🌿</span>
-                        <h3>Ingredientes raros</h3>
-                        <p>Utilizamos essências extraídas de cultivos sustentáveis e exclusivos, respeitando o tempo da natureza.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <span class="benefit-icon">🕰️</span>
-                        <h3>Maturação artesanal</h3>
-                        <p>Cada lote descansa por 120 dias para alcançar equilíbrio perfeito entre notas de saída, corpo e fundo.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <span class="benefit-icon">🎁</span>
-                        <h3>Experiência completa</h3>
-                        <p>Embalagens premium, refil garantido e brindes exclusivos em todas as compras acima de R$ 450.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="collection">
-            <div class="container collection-grid">
-                <div class="collection-header">
-                    <h2>Coleção Essências Eternas</h2>
-                    <p>
-                        Uma curadoria sensorial que combina tradição perfumista e modernidade. Conheça os best-sellers que
-                        se tornaram assinatura de quem busca sofisticação todos os dias.
-                    </p>
-                    <a class="cta-primary" href="#experimente">Assine o kit descoberta</a>
-                </div>
-                <div class="product-list">
-                    <article class="product-card">
-                        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80" alt="Perfume clássico" />
-                        <div>
-                            <h3>Ciel de Provence</h3>
-                            <p>Lavanda azul, íris e musk branco em um floral fresco e envolvente.</p>
-                            <div class="product-footer">
-                                <span class="price">R$ 549</span>
-                                <a class="cta-link" href="#">Adicionar à sacola</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="product-card">
-                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=700&q=80" alt="Perfume dourado" />
-                        <div>
-                            <h3>Rêve de Miel</h3>
-                            <p>Mel de acácia, flor de laranjeira e fava tonka para noites acolhedoras.</p>
-                            <div class="product-footer">
-                                <span class="price">R$ 599</span>
-                                <a class="cta-link" href="#">Adicionar à sacola</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="product-card">
-                        <img src="https://images.unsplash.com/photo-1510608821927-929c712be85a?auto=format&fit=crop&w=700&q=80" alt="Perfume âmbar" />
-                        <div>
-                            <h3>Bois Mystique</h3>
-                            <p>Cedro virginiano, incenso e vetiver com toque defumado e elegante.</p>
-                            <div class="product-footer">
-                                <span class="price">R$ 649</span>
-                                <a class="cta-link" href="#">Adicionar à sacola</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="story" id="historia">
-            <div class="container story-grid">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1458530970867-aaa3700cbbdd?auto=format&fit=crop&w=800&q=80" alt="Laboratório de perfumes" />
-                </div>
-                <div class="story-content">
-                    <h2>Tradição francesa, alma brasileira.</h2>
-                    <p>
-                        Fundada pela perfumista Anaïs Dupont, L'essence nasce da união entre técnicas francesas seculares e
-                        ingredientes nativos brasileiros. Cada fragrância é um convite para viajar por memórias afetivas
-                        traduzidas em notas aromáticas.
-                    </p>
-                    <p>
-                        Trabalhamos com pequenos produtores e respeitamos cada etapa: da colheita das flores ao processo de
-                        maceração. O resultado é um perfume com personalidade, longa duração e presença marcante.
-                    </p>
-                    <div class="story-highlights">
-                        <div>
-                            <h3>Certificação EcoScent</h3>
-                            <p>Produtos livres de crueldade animal e embalagens recicláveis.</p>
-                        </div>
-                        <div>
-                            <h3>Entrega signature</h3>
-                            <p>Envio com carta olfativa e amostra para experimentação antes de abrir o frasco.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <div class="container">
-                <h2>Quem já se encantou com L'essence</h2>
-                <div class="testimonials-grid">
-                    <blockquote class="testimonial">
-                        <p>“O perfume Noir Velours me acompanha nas ocasiões especiais. Recebo elogios toda vez que uso.”</p>
-                        <cite>— Camila, São Paulo</cite>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        <p>“O atendimento é impecável e as fragrâncias são únicas. Já estou na terceira compra!”</p>
-                        <cite>— Rodrigo, Belo Horizonte</cite>
-                    </blockquote>
-                    <blockquote class="testimonial">
-                        <p>“A assinatura do kit descoberta é perfeita para encontrar novas fragrâncias favoritas todos os meses.”</p>
-                        <cite>— Helena, Curitiba</cite>
-                    </blockquote>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section" id="experimente">
-            <div class="container cta-grid">
-                <div>
-                    <h2>Experimente o kit descoberta</h2>
-                    <p>
-                        Receba 4 miniaturas exclusivas todo mês, com guia sensorial e crédito integral para escolher seu
-                        frasco de 75 ml favorito.
-                    </p>
-                </div>
-                <form class="cta-form">
-                    <label for="email">Deixe seu e-mail para garantir sua vaga</label>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-                        <button type="submit">Quero fazer parte</button>
-                    </div>
-                    <small>Prometemos enviar somente novidades perfumadas.</small>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div>
-                <span class="brand">L'essence</span>
-                <p>Perfumes autorais criados em lotes limitados desde 2014.</p>
-            </div>
-            <div>
-                <h3>Contato</h3>
-                <ul>
-                    <li><a href="mailto:atelier@lessence.com">atelier@lessence.com</a></li>
-                    <li><a href="tel:+551130000000">+55 11 3000-0000</a></li>
-                    <li>Rua das Flores, 120 - São Paulo</li>
-                </ul>
-            </div>
-            <div>
-                <h3>Siga</h3>
-                <ul>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Pinterest</a></li>
-                    <li><a href="#">YouTube</a></li>
-                </ul>
-            </div>
+          </form>
+          <ul class="login-bullets">
+            <li>Correção automática ao final dos simulados</li>
+            <li>Resultados detalhados com resolução correta de cada questão</li>
+            <li>Gerenciamento de listas, provas e exercícios por série e disciplina</li>
+          </ul>
         </div>
-        <p class="footer-note">© 2024 L'essence. Todos os direitos reservados.</p>
-    </footer>
+        <div class="card stats-card">
+          <p class="eyebrow">Resumo rápido</p>
+          <h2>Indicadores da plataforma</h2>
+          <div class="stat-grid">
+            <div class="stat">
+              <span class="stat-number">+2.500</span>
+              <span class="stat-label">Questões no banco</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">180</span>
+              <span class="stat-label">Simulados gerados</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">12</span>
+              <span class="stat-label">Vestibulares mapeados</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Correções automáticas em segundos</span>
+            </div>
+          </div>
+          <div class="tip-box">
+            <strong>Dica:</strong> crie simulados temáticos filtrando dificuldade, disciplina e vestibular. O gabarito sai na hora e mostra a resolução correta para cada item.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="banco">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Banco de questões</p>
+            <h2>Cadastre itens com imagens, filtros e gabarito</h2>
+            <p class="muted">Cada questão pode receber dificuldade, nível de ensino, vestibular de origem, disciplina e área específica. Isso facilita montar listas, provas e simulados em minutos.</p>
+          </div>
+          <div class="tag">Correção automática</div>
+        </div>
+
+        <div class="filters-grid">
+          <label>
+            <span>Nível de dificuldade</span>
+            <select>
+              <option>Fácil</option>
+              <option>Médio</option>
+              <option>Difícil</option>
+            </select>
+          </label>
+          <label>
+            <span>Nível de ensino</span>
+            <select>
+              <option>Fundamental II</option>
+              <option>Médio</option>
+              <option>Pré-vestibular</option>
+            </select>
+          </label>
+          <label>
+            <span>Fonte / Vestibular</span>
+            <select>
+              <option>ENEM</option>
+              <option>Fuvest</option>
+              <option>Unicamp</option>
+              <option>ITA</option>
+              <option>Outros</option>
+            </select>
+          </label>
+          <label>
+            <span>Disciplina</span>
+            <select>
+              <option>Matemática</option>
+              <option>Química</option>
+              <option>Física</option>
+              <option>Biologia</option>
+            </select>
+          </label>
+          <label>
+            <span>Área dentro da disciplina</span>
+            <select>
+              <option>Geometria</option>
+              <option>Álgebra</option>
+              <option>Funções</option>
+              <option>Probabilidade</option>
+            </select>
+          </label>
+          <label>
+            <span>Busca rápida</span>
+            <input type="search" placeholder="Ex: função quadrática, ótica, termoquímica">
+          </label>
+        </div>
+
+        <div class="question-form">
+          <div class="form-head">
+            <div>
+              <p class="eyebrow">Novo enunciado</p>
+              <h3>Adicionar questão ao banco</h3>
+            </div>
+            <span class="save-indicator" id="save-indicator">Salvando...</span>
+          </div>
+          <form class="form-grid" id="question-form">
+            <label class="full">
+              <span>Enunciado</span>
+              <textarea name="statement" placeholder="Descreva o problema, insira tabelas ou contexto da questão." required></textarea>
+            </label>
+            <label class="full">
+              <span>Imagem (opcional)</span>
+              <input type="file" name="image" accept="image/*">
+            </label>
+            <div class="answers">
+              <label>
+                <span>Alternativa A</span>
+                <input type="text" name="a" placeholder="Resposta A" required>
+              </label>
+              <label>
+                <span>Alternativa B</span>
+                <input type="text" name="b" placeholder="Resposta B" required>
+              </label>
+              <label>
+                <span>Alternativa C</span>
+                <input type="text" name="c" placeholder="Resposta C" required>
+              </label>
+              <label>
+                <span>Alternativa D</span>
+                <input type="text" name="d" placeholder="Resposta D" required>
+              </label>
+              <label>
+                <span>Alternativa correta</span>
+                <select name="correct" required>
+                  <option value="">Selecione</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                </select>
+              </label>
+            </div>
+            <label class="full">
+              <span>Explicação / Resolução</span>
+              <textarea name="solution" placeholder="Insira a resolução comentada que será exibida após a correção automática."></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="primary-btn">Salvar questão</button>
+              <button type="reset" class="secondary-btn" id="clear-cache">Limpar e remover rascunho</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card" id="simulado">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Simulados personalizados</p>
+            <h2>Monte provas, listas e simulados a partir do banco de questões</h2>
+            <p class="muted">Escolha filtros, defina tempo, gere um caderno de questões e receba a correção instantânea com gabarito e resolução detalhada.</p>
+          </div>
+          <div class="tag success">Correção imediata</div>
+        </div>
+
+        <form class="form-grid">
+          <label>
+            <span>Nome do simulado</span>
+            <input type="text" placeholder="Simulado ENEM - Matemática" required>
+          </label>
+          <label>
+            <span>Quantidade de questões</span>
+            <input type="number" min="5" max="90" value="20" required>
+          </label>
+          <label>
+            <span>Duração (minutos)</span>
+            <input type="number" min="15" max="240" value="60" required>
+          </label>
+          <label>
+            <span>Dificuldade alvo</span>
+            <select>
+              <option>Misto (todas)</option>
+              <option>Fácil</option>
+              <option>Médio</option>
+              <option>Difícil</option>
+            </select>
+          </label>
+          <label>
+            <span>Disciplina</span>
+            <select>
+              <option>Matemática</option>
+              <option>Química</option>
+              <option>Física</option>
+              <option>Biologia</option>
+            </select>
+          </label>
+          <label>
+            <span>Vestibular de referência</span>
+            <select>
+              <option>ENEM</option>
+              <option>Fuvest</option>
+              <option>Unesp</option>
+              <option>Outros</option>
+            </select>
+          </label>
+          <label class="full">
+            <span>Estratégia</span>
+            <textarea placeholder="Ex: 10 questões fáceis de funções + 5 médias de geometria + 5 difíceis de probabilidades."></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">Gerar simulado</button>
+            <button type="button" class="secondary-btn">Exportar gabarito</button>
+          </div>
+        </form>
+
+        <div class="auto-feedback">
+          <h3>Correção automática e feedback</h3>
+          <ul>
+            <li>Após o envio, o sistema calcula a pontuação e já mostra quais alternativas estavam corretas.</li>
+            <li>As resoluções corretas cadastradas em cada questão são exibidas imediatamente para revisão.</li>
+            <li>Relatórios por dificuldade, disciplina e vestibular ficam disponíveis na mesma hora.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" id="relatorios">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Acompanhamento</p>
+            <h2>Visão geral de provas e progresso</h2>
+            <p class="muted">Monitore tentativas, gabaritos liberados e simulados gerados. Use os filtros para entender onde reforçar os estudos.</p>
+          </div>
+          <div class="tag neutral">Visão ao vivo</div>
+        </div>
+
+        <div class="report-grid">
+          <div class="report-card">
+            <p class="report-title">Listas finalizadas</p>
+            <h3>42</h3>
+            <p class="muted">Com correção automática entregue aos alunos.</p>
+          </div>
+          <div class="report-card">
+            <p class="report-title">Simulados com feedback</p>
+            <h3>27</h3>
+            <p class="muted">Incluindo provas estilo ENEM com resolução comentada.</p>
+          </div>
+          <div class="report-card">
+            <p class="report-title">Tempo médio de correção</p>
+            <h3>3s</h3>
+            <p class="muted">Do envio até mostrar gabarito e resolução.</p>
+          </div>
+          <div class="report-card">
+            <p class="report-title">Filtros favoritos</p>
+            <h3>Funções &amp; Geometria</h3>
+            <p class="muted">Áreas mais usadas na geração automática.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Simulação de alternância de visão aluno/professor
+    const toggle = document.getElementById('student-view-toggle');
+    const content = document.querySelector('.content');
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        content.classList.add('student-view');
+      } else {
+        content.classList.remove('student-view');
+      }
+    });
+
+    // Salvamento automático no formulário de questões
+    const form = document.getElementById('question-form');
+    const saveIndicator = document.getElementById('save-indicator');
+    const statusLine = document.getElementById('autosave-status');
+    const clearBtn = document.getElementById('clear-cache');
+    const STORAGE_KEY = 'portal_question_draft_v1';
+
+    function saveDraft() {
+      const data = new FormData(form);
+      const obj = {};
+      data.forEach((value, key) => {
+        obj[key] = value;
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+      const now = new Date();
+      saveIndicator.textContent = `Rascunho salvo às ${now.toLocaleTimeString()}`;
+      statusLine.textContent = 'Salvamento automático ligado';
+    }
+
+    function loadDraft() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      try {
+        const parsed = JSON.parse(raw);
+        Object.keys(parsed).forEach((key) => {
+          const field = form.elements[key];
+          if (!field) return;
+          if (field.type === 'select-one' || field.type === 'textarea' || field.type === 'text' || field.type === 'search') {
+            field.value = parsed[key];
+          }
+        });
+        saveIndicator.textContent = 'Rascunho recuperado automaticamente';
+      } catch (e) {
+        console.warn('Não foi possível carregar rascunho', e);
+      }
+    }
+
+    function clearDraft() {
+      localStorage.removeItem(STORAGE_KEY);
+      saveIndicator.textContent = 'Rascunho limpo';
+      statusLine.textContent = 'Salvamento automático ligado';
+    }
+
+    form.addEventListener('input', () => {
+      saveIndicator.textContent = 'Salvando...';
+    });
+
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      saveIndicator.textContent = 'Questão salva no banco';
+    });
+
+    clearBtn.addEventListener('click', () => {
+      form.reset();
+      clearDraft();
+    });
+
+    loadDraft();
+    setInterval(saveDraft, 10000);
+  </script>
 </body>
 </html>
